@@ -1,4 +1,4 @@
-// An example configuration file.abc
+// An example configuration file.
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
 var reporter = new HtmlScreenshotReporter({
   dest: 'target/screenshots',
