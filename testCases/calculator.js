@@ -7,7 +7,7 @@ describe('Demo Calculator Tests', function () {
     calcultorHomePage.enterFirstNumber('5');
     calcultorHomePage.enterSecondNumber('4');
     calcultorHomePage.clickGo();
-    browser.sleep(3000);
+    browser.sleep(2000);
     calcultorHomePage.verifyResult('9');
   });
 
