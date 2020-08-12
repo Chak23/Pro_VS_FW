@@ -1,0 +1,15 @@
+{
+    "userName" : "chakri",
+    "password"  : "Nomula",
+
+    "creadentials" : {
+        "userName" : "chakri",
+        "password"  : "Nomula"
+    },
+
+    "Addition_Test2" : {
+        "input1" : "5",
+        "input2" : "6",
+        "result" : "11"
+    }
+}

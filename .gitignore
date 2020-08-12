@@ -1,3 +1,6 @@
 allure-results/
 screenshots/
 target/
+Sample Practices/
+protractorBeautifulReporter/
+helper/

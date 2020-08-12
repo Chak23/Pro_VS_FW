@@ -12,6 +12,5 @@ describe("mysuite", function(){
         browser.sleep(3000);
         studentPage.verifyResult("John","India","JS","100");
         browser.sleep(3000);
-
     });
 });
