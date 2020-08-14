@@ -1,5 +1,3 @@
-// var HtmlReporter = require('protractor-beautiful-reporter');
-
 
 // An example configuration file.
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
@@ -23,6 +21,8 @@ exports.config = {
   // Spec patterns are relative to the current working directory when
   // protractor is called.
   specs: ['../testCases/calculator.js'],
+  // specs: ['../helper/util/dbUtil/postgresUtil.js'],
+  
   params: require('../testData/staticTestData.json'),
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
@@ -41,11 +41,21 @@ exports.config = {
     // browser.waitForAngularEnabled(false);
     // browser.ignoreSynchronization = true;
 
+    // helper require function to import page objects - // let calcultorHomePage = requirePO('calculatorPage'); - in specfile
+    // global.requirePO = function (relativePath) {
+    //   return require(__dirname + '/../Pages/' + relativePath + '.js');
+    // };
+
+    // helper require function to import helpers
+    // global.requireHelper = function (relativePath) {
+    //   return require(__dirname + '/../helpers/' + relativePath + '.js');
+    // };
+
  // Add a screenshot reporter and store screenshots to `/protractorBeautifulReporter/screenshots`: -protractorBeautifulReporter
 
     let HtmlReporter = require('protractor-beautiful-reporter');
     jasmine.getEnv().addReporter(new HtmlReporter({
-      baseDirectory: 'protractorBeautifulReporter/screenshots',
+      baseDirectory: 'protractorBeautifulReporter',
       screenshotsSubfolder: 'screenshotsOnFailure',
       takeScreenShotsOnlyForFailedSpecs: true,
       jsonsSubfolder: 'jsonFiles',

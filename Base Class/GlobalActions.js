@@ -1,3 +1,5 @@
+var EC = protractor.ExpectedConditions;
+
 let globalActions = function(){
 
     this.getUrl = async function (url) {
@@ -10,8 +12,7 @@ let globalActions = function(){
       };
 
     this.enterText = async function(element, inputValue){
-        // browser.sleep(500);
-        await element.sendkeys(inputValue);
+        await element.sendKeys(inputValue);
     }
 
     this.click = async function(element)

@@ -3,4 +3,6 @@ screenshots/
 target/
 Sample Practices/
 protractorBeautifulReporter/
-helper/
+node_modules/
+connections/
+dbTests/

@@ -8,7 +8,8 @@ let calculatorHome = function () {
   
     this.enterFirstNumber = function (firstInput) {
         expect(firstNumber.isPresent()).toBe(true);
-        firstNumber.sendKeys(firstInput);
+        // firstNumber.sendKeys(firstInput);
+        globalActionsPage.enterText(firstNumber,firstInput);
     };
 
     this.enterSecondNumber = function (secondInput) {
