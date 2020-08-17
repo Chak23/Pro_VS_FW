@@ -15,8 +15,13 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  // multiCapabilities: [
+  //   { 'browserName': 'chrome'},
+  //   { 'browserName': 'firefox'}
+  // ],
+
   // Framework to use. Jasmine is recommended.
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
@@ -109,6 +114,13 @@ exports.config = {
     }));
   },
 
+  //in case to run as a suite
+  suites : {
+    singleTest : ['../testCases/calculator.js'],
+    smoke : ['../testCases/calculator.js'],
+    regression : []
+  },
+
   // Close the report after all tests finish
   afterLaunch: function (exitCode) {
     return new Promise(function (resolve) {
@@ -116,7 +128,7 @@ exports.config = {
     });
   },
 
-  //HTMLReport called once tests are finished
+  //HTMLReport called once tests are finished - protractor html reporter2
   onComplete: function () {
     var browserName, browserVersion;
     var capsPromise = browser.getCapabilities();
