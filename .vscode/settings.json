@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Segoe UI",
+    "editor.fontFamily": "Consolas",
     "terminal.integrated.fontFamily": "Consolas",
     "editor.fontLigatures": true
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="2" time="13.583">
- <testsuite name="Demo Calculator Tests" timestamp="2020-08-17T13:20:58" hostname="localhost" time="13.583" errors="0" tests="2" skipped="0" disabled="0" failures="0">
-  <testcase classname="Demo Calculator Tests" name="Addition Test_1" time="7.863" />
-  <testcase classname="Demo Calculator Tests" name="Addition Test_2" time="5.714" />
+<testsuites disabled="0" errors="0" failures="0" tests="2" time="21.41">
+ <testsuite name="Demo Calculator Tests" timestamp="2020-08-21T11:22:04" hostname="localhost" time="21.41" errors="0" tests="2" skipped="0" disabled="0" failures="0">
+  <testcase classname="Demo Calculator Tests" name="Addition Test_1" time="9.742" />
+  <testcase classname="Demo Calculator Tests" name="Addition Test_2" time="11.652" />
  </testsuite>
 </testsuites>

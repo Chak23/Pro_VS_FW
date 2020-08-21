@@ -36,6 +36,17 @@ let globalActions = function(){
             return text;
         });
     }
+    
+    this.enableMobile = async function(pageUrl, deviceName){
+        const puppeteer = require('puppeteer');
+        const devices = require('puppeteer/DeviceDescriptors');
+
+        const browser = await puppeteer.launch()
+        const page = await browser.newPage()
+        await page.emulate(devices['iPhone 6'])
+        await page.goto(pageUrl)
+        console.log("Mobile Emulator enabled")
+    }
 
 
 };

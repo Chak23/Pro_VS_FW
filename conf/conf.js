@@ -1,4 +1,3 @@
-
 // An example configuration file.
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
 var reporter = new HtmlScreenshotReporter({
@@ -11,14 +10,40 @@ exports.config = {
   directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
-  capabilities: {
-    'browserName': 'chrome'
-  },
+  // capabilities: {
+  //   'browserName': 'chrome'
+  // },
 
   // multiCapabilities: [
   //   { 'browserName': 'chrome'},
   //   { 'browserName': 'firefox'}
   // ],
+
+  multiCapabilities: [
+    {
+        browserName: 'chrome'
+    },
+    {
+      browserName: 'chrome',
+      name: 'iPad',
+      'chromeOptions': {
+        args: ['--lang=en','--window-size=1024,768'],
+          'mobileEmulation': {
+              'deviceName': 'iPad',
+          },
+      }
+  },
+
+    {
+        browserName: 'chrome',
+        'chromeOptions': {
+          args: ['--lang=en','--window-size=375,667'],
+            'mobileEmulation': {
+                'deviceName': 'iPhone 6/7/8'
+            },
+        }
+    },
+],
 
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine2',
@@ -26,6 +51,7 @@ exports.config = {
   // Spec patterns are relative to the current working directory when
   // protractor is called.
   specs: ['../testCases/calculator.js'],
+  // specs: ['../testCases/emableMobile.js'],
   // specs: ['../helper/util/dbUtil/postgresUtil.js'],
   
   params: require('../testData/staticTestData.json'),
@@ -62,7 +88,7 @@ exports.config = {
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'protractorBeautifulReporter',
       screenshotsSubfolder: 'screenshotsOnFailure',
-      takeScreenShotsOnlyForFailedSpecs: true,
+      takeScreenShotsOnlyForFailedSpecs: false,
       jsonsSubfolder: 'jsonFiles',
       excludeSkippedSpecs: true,
       preserveDirectory: false,
@@ -130,11 +156,12 @@ exports.config = {
 
   //HTMLReport called once tests are finished - protractor html reporter2
   onComplete: function () {
-    var browserName, browserVersion;
+    var browserName, browserVersion, sessionId;
     var capsPromise = browser.getCapabilities();
 
     capsPromise.then(function (caps) {
       browserName = caps.get('browserName');
+      sessionId = caps.get("sessionid" + 'webdriver.remote.sessionid');
       browserVersion = caps.get('version');
       platform = caps.get('platform');
 

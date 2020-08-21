@@ -12,3 +12,9 @@ npm i allure-commandline
 
 Step 5 : Run command
 allure serve “location of allure-results folder”
+
+************Run Postgres ************
+1. In Terminal give the below command and enter.
+cd C:\Users\Administrator\Documents\Protractor\helper\util\dbUtil
+2. Type below command and hit enter
+node postgresUtil.js
