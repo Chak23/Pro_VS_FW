@@ -7,6 +7,12 @@ let globalActions = function(){
         browser.driver.manage().window().maximize();
     };
 
+    this.getPageTitle = async function(){
+        await browser.getTitle().then(async function(title){
+            console.log("Web page title is : " +title )
+        })
+    }
+    
     this.setName = async function(name) {
         await nameInput.sendKeys(name);
       };
@@ -48,6 +54,60 @@ let globalActions = function(){
         console.log("Mobile Emulator enabled")
     }
 
+    this.isElementDisplayed = async function(element){
+        await element.isDisplayed().then(function(displayFlag){
+			console.log("Is Element Displayed : "+displayFlag);
+		})
+    }
+
+    this.isElementEnabled = async function(element){
+        await element.isEnabled().then(function(enabledFlag){
+			console.log("Is Element Enabled : "+enabledFlag);
+		})
+    }
+
+    //For checkboxes, radio buttons and dropdowns
+    this.isElementSelected = async function(element){
+        await element.isSelected().then(function(selectedFlag){
+			console.log("Is Element Selected : "+selectedFlag);
+		})
+    }
+
+    this.implicitWait = async function(){
+        await browser.manage().timeouts().implicitlyWait(10000);
+    }
+
+    this.mouseHover = async function(element){
+        browser.manage().timeouts().implicitlyWait(10000);
+        await browser.actions().mouseMove(element).perform();
+    }
+
+    this.moveDown = async function(element){
+        browser.manage().timeouts().implicitlyWait(5000);
+        browser.actions().mouseDown(element.getWebElement()).perform()
+    }
+
+    this.moveUp = async function(element){
+        browser.manage().timeouts().implicitlyWait(5000);
+        browser.actions().mouseUp(element.getWebElement()).perform()
+    }
+
+    this.elementDragAndDrop = async function(sourceElement, targetElement){
+        browser.manage().timeouts().implicitlyWait(10000);
+        await browser.actions().dragAndDrop(sourceElement, targetElement).perform();
+    }
+
+    this.performClick = async function(element){
+        browser.manage().timeouts().implicitlyWait(10000);
+		await browser.actions().click(element).perform();
+    }
+
+    this.performDoubleClick = async function(element){
+        browser.manage().timeouts().implicitlyWait(10000);
+		await browser.actions().doubleClick(element).perform();
+    }
+
+    
 
 };
 
