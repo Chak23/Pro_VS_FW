@@ -18,3 +18,12 @@ allure serve “location of allure-results folder”
 cd C:\Users\Administrator\Documents\Protractor\helper\util\dbUtil
 2. Type below command and hit enter
 node postgresUtil.js
+
+************S/W Requirments ************
+1. Install Node js
+2. Install Visual Studio Code
+3. Install Java
+4. Install Chrome
+5. Install PostgreSQL 11
+6. Install Git
+7. Install Protractor, Protractor html reporter2, Allure reoirts globally

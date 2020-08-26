@@ -164,7 +164,7 @@ exports.config = {
       sessionId = caps.get("sessionid" + 'webdriver.remote.sessionid');
       browserVersion = caps.get('version');
       platform = caps.get('platform');
-
+      
       var HTMLReport = require('protractor-html-reporter-2');
 
       testConfig = {
